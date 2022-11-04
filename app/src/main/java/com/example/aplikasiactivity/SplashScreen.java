@@ -13,29 +13,31 @@ import com.example.aplikasiactivity.util.PreferenceHelper;
 public class SplashScreen extends AppCompatActivity {
     public static final String TAG = "SplashScreen";
     PreferenceHelper preferenceHelper;
+    private int splashinterval = 10000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        int splashinterval = 10000;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(SplashScreen.this, HomeActivity.class));
-            }
-        }, splashinterval);
 
         preferenceHelper = PreferenceHelper.getInstance(getApplicationContext());
 
-        Boolean isLoggedIn = preferenceHelper.isLogin();
-        if(isLoggedIn){
-            startActivity(new Intent(getApplicationContext(),FirstActivity.class));
-        finish();}
-        else{
-            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-            finish();
-        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+//                startActivity(new Intent(SplashScreen.this, HomeActivity.class));
+
+                Boolean isLoggedIn = preferenceHelper.isLogin();
+                if(isLoggedIn){
+                    startActivity(new Intent(getApplicationContext(),FirstActivity.class));
+                    finish();}
+                else{
+                    startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                    finish();
+                }
+            }
+        }, splashinterval);
+
     }
 
     @Override
