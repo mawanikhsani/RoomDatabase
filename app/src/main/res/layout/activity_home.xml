@@ -44,4 +44,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.877" />
 
+    <Button
+        android:id="@+id/btnTambah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="Tambah"
+        app:layout_constraintTop_toBottomOf="@+id/btnFragment"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <Button
+        android:id="@+id/btnTampil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:text="Tampil"
+        app:layout_constraintTop_toBottomOf="@+id/btnTambah"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Edit"
+        app:layout_constraintTop_toBottomOf="@+id/btnTampil"
+        tools:layout_editor_absoluteX="20dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
